@@ -7,26 +7,26 @@ If the total numbers of input are less than 85 (array size 81  + 2 text inputs )
 <h3>Blade (formInput.blade)</h3>
 
 ```
-		@if ($errors->any())
-			<div class="alert alert-danger">
-				<ul>
-					@foreach ($errors->all() as $error)
-						<li>{{ $error }}</li>
-					@endforeach
-				</ul>
-			</div>
-		@endif			
-       <div class="flex-center position-ref full-height">
-			<form method="post" action="{{url('form')}}" id="infoForm" >
-				@csrf
-				<input type="text" class="form-control" name="name" placeholder="Section A" value="{{ old('name') }}">
-				<input type="text" class="form-control" name="king" placeholder="Section A" value="{{ old('king') }}">
-				@for($i=0;$i<81;$i++)
-					<input type="hidden" name="test[]" value="{{$i}}">
-				@endfor
-				<button type="submit">Submit</button>
-			</form>			
-        </div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif			
+<div class="flex-center position-ref full-height">
+    <form method="post" action="{{url('form')}}" id="infoForm" >
+        @csrf
+        <input type="text" class="form-control" name="name" placeholder="Section A" value="{{ old('name') }}">
+        <input type="text" class="form-control" name="king" placeholder="Section A" value="{{ old('king') }}">
+        @for($i=0;$i<81;$i++)
+            <input type="hidden" name="test[]" value="{{$i}}">
+        @endfor
+        <button type="submit">Submit</button>
+    </form>			
+</div>
 ```
 
 If i increase the number of input from 81 to 85, i dont' get error message
