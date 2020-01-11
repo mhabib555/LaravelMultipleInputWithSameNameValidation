@@ -5,6 +5,7 @@ Unable to get error message if the number of inputs is greator than 85 (array si
 If the total numbers of input are less than 85 (array size 81  + 2 text inputs ) then i get error message. 
 
 <h3>Blade (formInput.blade)</h3>
+```
 		@if ($errors->any())
 			<div class="alert alert-danger">
 				<ul>
@@ -25,13 +26,15 @@ If the total numbers of input are less than 85 (array size 81  + 2 text inputs )
 				<button type="submit">Submit</button>
 			</form>			
         </div>
+```
 
-
+If i increase the number of input from 81 to 85, i dont' get error message
 
 
 
 <h3>Controller (formValidatorController)</h3>
-    public function store(Request $request)
+  ```
+  public function store(Request $request)
     {
 		$validatedData = $request->validate([
 			'name' => 'bail|required',
@@ -42,7 +45,10 @@ If the total numbers of input are less than 85 (array size 81  + 2 text inputs )
 		return redirect('form')->with('success', 'Information has been added');    
 		
     }
+```
     
 
 <h3>Routes</h3>
+```
 Route::resource('form', 'formValidatorController'); 
+```
