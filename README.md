@@ -4,6 +4,8 @@ Unable to get error message if the number of inputs is greator than 85 (array si
 
 If the total numbers of input are less than 85 (array size 81  + 2 text inputs ) then i get error message. 
 
+ The validation function work if input is invalid as it redirect back to the page but doesn't show error message. 
+
 <h3>Blade (formInput.blade)</h3>
 
 ```
