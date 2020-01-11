@@ -28,10 +28,6 @@ If the total numbers of input are less than 85 (array size 81  + 2 text inputs )
 
 
 
--------------------------------------------------------------------------
-If i increase the number of input from 81 to 85, i dont error message
--------------------------------------------------------------------------
-
 
 
 <h3>Controller (formValidatorController)</h3>
