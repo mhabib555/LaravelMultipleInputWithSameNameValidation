@@ -81,3 +81,10 @@ array:3 [▼
 ]
 
 ```
+
+
+
+<h1>Solution of the above Problem</h1>
+Solved by changing session driver from cookie to file
+
+SESSION_DRIVER=file
